@@ -1,0 +1,59 @@
+CREATE TABLE `assessment`.`trainer_info` (
+  `Trainer_ID` VARCHAR(20) NULL comment "Unique ID to every trainer",
+  `Salutation` VARCHAR(7) NULL comment "Salutation of trainer",
+  `Trainer_Name` VARCHAR(30) NULL comment "Name of trainer",
+  `Trainer_Location` VARCHAR(30) NULL comment "Location of trainer",
+  `Trainer_Track` VARCHAR(15) NULL comment "Track of trainer e.g.JAVA, .Net, Mainframe",
+  `Trainer_Qualification` VARCHAR(100) NULL comment "Qualification of trainer e.g.MCA, B>tech",
+  `Trainer_Experience` INT(11) NULL comment "Experience of trainer e.g.2,4 years",
+  `Trainer_Email` VARCHAR(100) NULL comment "Email Id of trainer",
+  `Trainer_Password` VARCHAR(20) NULL comment "Login password of trainer",
+  UNIQUE INDEX `Trainer_ID_UNIQUE` (`Trainer_ID` ASC));
+  CREATE TABLE `assessment`.`batch_info` (
+  `Batch_Id` VARCHAR(20) NULL comment "unique Id to every batch",
+  `Batch_Owner` VARCHAR(30) NULL comment "Batch owner name",
+  `Batch_BU_Name` VARCHAR(30) NULL comment "Business unit to which batch belongs",
+  UNIQUE INDEX `Batch_Id_UNIQUE` (`Batch_Id` ASC));
+CREATE TABLE `assessment`.`module_info` (
+  `Module_Id` VARCHAR(20) NULL comment "unique Id to every module e.g J2EE, J2EE",
+  `Module_Name` VARCHAR(40) NULL comment "Name of module e.g.COre Java SE 1.6",
+  `Module_Duration` INT(11) NULL comment "Duration in hrs",
+  UNIQUE INDEX `Module_Id_UNIQUE` (`Module_Id` ASC));
+CREATE TABLE `assessment`.`associate_info` (
+  `Associate_Id` VARCHAR(20) NULL comment "Unique ID to every associate",
+  `Salutation` VARCHAR(7) NULL comment "Salutation of associate",
+  `Associate_Name` VARCHAR(30) NULL comment "Name of associate",
+  `Associate_Location` VARCHAR(30) NULL comment "Location of associate",
+  `Associate_Track` VARCHAR(15) NULL comment "Track of asspciate e.g.MCA,B.tech",
+  `Asociate_Qualification` VARCHAR(200) NULL comment "Qualification of associate e.g.MCA,B.Tech",
+  `Associate_Email` VARCHAR(100) NULL comment "Email Id of associate",
+  `Associate_Password` VARCHAR(20) NULL comment "Login password of associate",
+  UNIQUE INDEX `Associate_Id_UNIQUE` (`Associate_Id` ASC));
+CREATE TABLE `assessment`.`questions` (
+  `Question_Id` VARCHAR(20) NULL comment "Unique Id to every question",
+  `Module_Id` VARCHAR(20) NULL comment "Module Id from module",
+  `Question_Text` VARCHAR(900) NULL comment "Actual feedback question",
+  UNIQUE INDEX `Question_Id_UNIQUE` (`Question_Id` ASC));
+CREATE TABLE `assessment`.`associate_status` (
+  `Associate_Id` VARCHAR(20) NULL comment "Associate Id from associate_info",
+  `Module_Id` VARCHAR(20) NULL comment "Module Id from module",
+  `Start_Date` VARCHAR(20) NULL comment "Date when associate batch started",
+  `End_Date` VARCHAR(20) NULL comment "Date when associate batch ended",
+  `AFeedbackGiven` VARCHAR(20) NULL comment "Flag to test whether Trainer has given feedback or not",
+  `TFeedbackGiven` VARCHAR(20) NULL comment "Flag to test whether Trainer has given feedback or not",
+  UNIQUE INDEX `Associate_Id_UNIQUE` (`Associate_Id` ASC));
+CREATE TABLE `assessment`.`trainer_feedback` (
+  `Trainer_Id` VARCHAR(20) NULL comment "Trainer Id from trainer_Info ",
+  `Question_Id` VARCHAR(20) NULL comment "Question Id from Questions",
+  `Batch_Id` VARCHAR(20) NULL comment "Batch Id from batch_Info",
+  `Module_Id` VARCHAR(20) NULL comment "Module Id from module",
+  `Trainer_Rating` INT(11) NULL comment "Rating given by trainer for a particular question");
+  CREATE TABLE `assessment`.`Associate_Feedback`(
+  `Associate_Id` varchar(20) NULL comment "Associate Id from Associate_Info",
+  `Question_Id` varchar(20) NULL comment "Question Id from Questions",
+  `Module Id` varchar(20) NULL comment "Module Id from Module",
+  `Associate_Rating` INT(11) NULL comment "Rating given by associate for a particular question"
+  );
+CREATE TABLE `assessment`.`login_details` (
+  `User_Id` VARCHAR(20) NULL comment "User Id for login",
+  `User_Password` VARCHAR(20) NULL comment "Password to authenticate user");
