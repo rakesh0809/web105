@@ -1,0 +1,89 @@
+
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>seek coding</title>
+        <link rel="stylesheet" href="web.css">
+        <!---we had linked our css file----->
+    <script type="text/javascript" src="https://gc.kis.v2.scr.kaspersky-labs.com/FD126C42-EBFA-4E12-B309-BB3FDD723AC1/main.js?attr=04osIxbXx3pClrXn4qizfRb7o63VczJad4-ubL6j5Y0eklVP0zT33zzDOznt765HcpWak7A6Wl3ITX0miUVbRpBgyFCXVZGNBxptnlSfzaTajWsfvH_KGtSMeHPaduzoOLcU8JlqUqz-WTmFiy-3SX1mUikGKnhs2w370PWX7eZ7hx7INV_ZD72Cc1MvNXKSjGZU1LUxGkGAaNmoy046GLZc74Tt4bLPLejppQ-jT307EYR-00TAM3QV7mqGyqdGGf-7uNZMbXzqyZwmMMibma3lpcp4ixotnluyBCenBx74GGuTgJ8JcHKStqsrMMEfZ_mpyTx_bPbYwRXcS18_PsoD36tjZet2dhif8bGkFL2ZmyCLKg4jV37BZRRX1N-BGbwHWOHw5K-03t9TcmClapF6IzyTfbdY5gNQNUg0vjLc9e1D-DNChjoQWJ5ol6sc7wRUVBR1OIQoJCoLN4jtl9j9_-pmqy0NUFgtVBZzOYflyqRbdDjV44gBZ6A8QuG9VqzjJaUIEETSGLleePfVKjXGJKGS2g3AzHfFFPBJC5Y2XN3AUO3NDu1nSo7tqG22N4GBjHWRvm_F_mkXbpLzB6-gE7Gnzfh0btRADP9EGnfxCy9oA6Xp_Y5gdU9XQ8zLt0Q2V6qoHKow3WMm2uUtJCG-RmrP_8YjHekrMIXQOK-MAJV9qI_zTsz54ZukhcVlaDHx3tprbNcC31OHzl3dNQ0JyqfQ22PHCTmsYFWRZyjcoRdNvz4ZjAiu8j0rvYSbcul3_5eld_M0uWUF6sLjBMqbZLd2Jc0QuXNC4XFW6YWZpt_ddjBtp9WKZ6xC5utWKuo_JjmemDf196FvcchuQ8jkiI4aLV8o6x9j9L0tYimfpIkyK8Er9aAdBKEOX22k1RoRgeUQvsJXncztY9h95cJ4ViWn-DuxWUaQSKDHIS3bKJxLrsqn5pZo9dPNHoqdy7U4cB1JwDvOkOC_2dZ140j5DMAV9Y5AZSJQGWCXkD9wtGkKahfWU3p-ZV8HsXUkKQHRAIgjf-7uyEXnFzEvYOLL22EjIFp3XEmrrNfEE1yJq0vEbpdoYY8IrxohETVcFTCzhff9YZ1s7VWi7N7dGUBlo8qHHKOHQ9xxI7qb0WvBQdb_WVKwhsdbwC8oz73YkyeaJQLVgOniZVZJGM7iCMbZZAkaVG5H3epQOmMPniI" nonce="2263edec7c53420754a284854ffaa865" charset="UTF-8"></script></head>
+    <body>
+        <div class="full-page">
+            <div class="navbar">
+                <div>
+                    <a href='web.html'>SBI Bank</a>
+                </div>
+                <nav>
+                    <ul id='MenuItems'>
+                        <li><a href='#'>Home</a></li>
+                        <li><a href='#'>About Us</a></li>
+                        <li><a href='#'>Services</a></li>
+                        <li><a href='#'>Contact</a></li>
+                        <li><button class='loginbtn' onclick="document.getElementById('login-form').style.display='block'" style="width:auto;">Login</button></li>
+                        <li><button class='loanbtn' onclick="document.getElementById('loan-form').style.display='block'" style="width:auto;">Loan</button></li>
+
+                    </ul>
+                </nav>
+            </div>
+            <div id='login-form'class='login-page'>
+                <div class="form-box">
+                    <div class='button-box'>
+                        <div id='btn'></div>
+                        <button type='button'onclick='login()'class='toggle-btn'>Log In</button>
+                        <button type='button'onclick='register()'class='toggle-btn'>Register</button>
+                    </div>
+                    <form id='login' class='input-group-login'>
+                        <input type='text'class='input-field'placeholder='Email Id' required >
+                <input type='password'class='input-field'placeholder='Enter Password' required>
+                <input type='checkbox'class='check-box'><span>Remember Password</span>
+                <button type='submit'class='submit-btn'>Log in</button>
+             </form>
+             <form id='register' class='input-group-register'>
+                 <input type='text'class='input-field'placeholder='First Name' required>
+                 <input type='text'class='input-field'placeholder='Last Name ' required>
+                 <input type='email'class='input-field'placeholder='Email Id' required>
+                 <input type='password'class='input-field'placeholder='Enter Password' required>
+                 <input type='password'class='input-field'placeholder='Confirm Password'  required>
+                 <input type='checkbox'class='check-box'><span>I agree to the terms and                                                   conditions</span>
+                        <button type='submit'class='submit-btn'>Register</button>
+                 </form>
+                </div>
+            </div>
+            
+              
+        </div>
+        <script>
+            var x=document.getElementById('login');
+            var y=document.getElementById('register');
+        
+            var z=document.getElementById('btn');
+            function register()
+            {
+                x.style.left='-400px';
+                y.style.left='50px';
+                z.style.left='110px';
+            }
+            function login()
+            {
+                x.style.left='50px';
+                y.style.left='450px';
+        
+                z.style.left='0px';
+            }
+
+
+
+
+        </script>
+        <script>
+            var modal = document.getElementById('login-form');
+            window.onclick = function(event) 
+            {
+                if (event.target == modal) 
+                {
+                    modal.style.display = "none";
+                }
+            }
+           
+        </script>
+    </body>
+    </html>
